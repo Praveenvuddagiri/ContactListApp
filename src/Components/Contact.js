@@ -3,30 +3,30 @@ import '../CSS/Contact.css';
 import { Avatar } from '@mui/material';
 import MailIcon from '@mui/icons-material/Mail';
 import PhoneIcon from '@mui/icons-material/Phone';
-function Contact() {
+function Contact({phone,email,name,city,image}) {
     return (
-        <div class="contact">
-            <div class="contact__content">
-                <div class="contact__image">
-                    <Avatar className="contact__avatar" src="https://picsum.photos/200"
+        <div className="contact">
+            <div className="contact__content">
+                <div className="contact__image">
+                    <Avatar className="contact__avatar" src={image}
                         sx={{ width: 100, height: 100 }} />
                 </div>
-                <div class="contact__about">
+                <div className="contact__about">
                     <div className='contact__name'>
-                        <h2>Praveen Vuddagiri</h2>
-                        <p>Port Blair</p>
+                        <h2>{name}</h2>
+                        <p>{city}</p>
                     </div>
                     <div className='contact__details'>
                         <p>
                             <MailIcon className='contact__icons'/>
                             <span>
-                                vuddagiripraveen@gmail.com
+                                {email}
                             </span>
                         </p>
                         <p>
                             <PhoneIcon className='contact__icons'/>
                             <span>
-                                7337426989
+                                {phone}
                             </span>
                         </p>
                     </div>
