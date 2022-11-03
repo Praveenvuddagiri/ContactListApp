@@ -3,9 +3,9 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import '../CSS/CardSkeleton.css'
 
-function CardSkeleton({cards}) {
+function CardSkeleton({ cards }) {
     return (
-        Array(cards).fill(0).map((_,i) => (
+        Array(cards).fill(0).map((_, i) => (
             <SkeletonTheme baseColor="#a9a9a9" highlightColor="#D3D3D3" key={i}>
                 <div className='skeleton' >
                     <div className='skeleton__content'>

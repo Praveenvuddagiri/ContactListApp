@@ -18,22 +18,22 @@ function HomePage() {
     const loadMore = () => {
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
             setIsLoading(true);
-            var num = parseInt(localStorage.getItem("pageNumber"))+1;
+            var num = parseInt(localStorage.getItem("pageNumber")) + 1;
             setPageNumber(num);
-            localStorage.setItem("pageNumber",num);
+            localStorage.setItem("pageNumber", num);
         }
     }
 
     useEffect(() => {
-        window.addEventListener('scroll', loadMore, true);
-        localStorage.setItem("pageNumber",1);
         if (!localStorage.getItem('userName')) {
             navigate('/');
         }
+        window.addEventListener('scroll', loadMore, true);
+        localStorage.setItem("pageNumber", 1);
     }, []);
 
 
-    
+
 
 
     useEffect(() => {
@@ -50,7 +50,7 @@ function HomePage() {
                         location: con.location.coordinates
                     }
                 })
-                setContact([...contact,...data]);
+                setContact([...contact, ...data]);
                 setIsLoading(false);
             });
     }, [pageNumber]);
@@ -76,8 +76,8 @@ function HomePage() {
                         Contacts List
                     </Typography>
 
-                    <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-                        Welcome {localStorage.getItem('userName')}
+                    <Typography variant="h5" sx={{ display: { xs: 'none', md: 'block', flexGrow: 1 } }} component="div" >
+                        WELCOME {localStorage.getItem('userName') && localStorage.getItem('userName').toLocaleUpperCase()}
                     </Typography>
 
                     <Button color="error" variant="contained" onClick={logout} >Logout</Button>

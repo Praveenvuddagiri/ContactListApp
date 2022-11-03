@@ -4,13 +4,13 @@ import VpnKeyIcon from '@mui/icons-material/VpnKey';
 import '../CSS/Login.css';
 import { useNavigate } from 'react-router-dom';
 function Login() {
-  const navigate = useNavigate ();
+  const navigate = useNavigate();
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
 
 
-  useEffect(()=>{
-    if(localStorage.getItem("userName")){
+  useEffect(() => {
+    if (localStorage.getItem("userName")) {
       navigate('/home');
     }
   });
@@ -18,8 +18,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
-    localStorage.setItem("userName",user);
+    localStorage.setItem("userName", user);
     navigate('/home');
   }
 

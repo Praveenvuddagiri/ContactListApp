@@ -18,12 +18,12 @@ function Contact({ phone, email, name, city, image, location }) {
                     <div className='contact__name'>
                         <h2>{name}</h2>
                         <p>
-                                <a
-                                    href={locationUrl}
-                                    target='_blank'>
-                                        {city}
-                                </a>
-                            
+                            <a
+                                href={locationUrl}
+                                target='_blank'>
+                                {city}
+                            </a>
+
                         </p>
 
                     </div>

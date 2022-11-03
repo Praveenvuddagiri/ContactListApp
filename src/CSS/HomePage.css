@@ -1,10 +1,11 @@
-.home{
+.home {
     display: flex;
     flex-direction: column;
     background-color: #EFEFEF;
-    
+
 }
-.home__contact{
+
+.home__contact {
     min-height: 100vh;
     display: flex;
     align-items: center;
