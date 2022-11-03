@@ -48,7 +48,8 @@ body{
     color: rgb(104, 150, 205);
     font-size: 20px;
 }
-.contact__name p{
+.contact__name p a{
+    text-decoration: none;
     font-size: 15px;
     color: rgb(109, 117, 132);
      
@@ -69,4 +70,9 @@ body{
 }
 .contact__details > p > span{
     color: #343A40;
+}
+.contact__locationIcon{
+    font-size: 25px;
+    color: #0096C7;
+
 }

@@ -1,9 +1,12 @@
 import React from 'react';
 import '../CSS/Contact.css';
-import { Avatar } from '@mui/material';
+import { Avatar, IconButton } from '@mui/material';
 import MailIcon from '@mui/icons-material/Mail';
 import PhoneIcon from '@mui/icons-material/Phone';
-function Contact({phone,email,name,city,image}) {
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+
+function Contact({ phone, email, name, city, image, location }) {
+    const locationUrl = `https://www.google.com/maps/search/?api=1&query=${location.latitude}%2C${location.longitude}`;
     return (
         <div className="contact">
             <div className="contact__content">
@@ -14,17 +17,25 @@ function Contact({phone,email,name,city,image}) {
                 <div className="contact__about">
                     <div className='contact__name'>
                         <h2>{name}</h2>
-                        <p>{city}</p>
+                        <p>
+                                <a
+                                    href={locationUrl}
+                                    target='_blank'>
+                                        {city}
+                                </a>
+                            
+                        </p>
+
                     </div>
                     <div className='contact__details'>
                         <p>
-                            <MailIcon className='contact__icons'/>
+                            <MailIcon className='contact__icons' />
                             <span>
                                 {email}
                             </span>
                         </p>
                         <p>
-                            <PhoneIcon className='contact__icons'/>
+                            <PhoneIcon className='contact__icons' />
                             <span>
                                 {phone}
                             </span>

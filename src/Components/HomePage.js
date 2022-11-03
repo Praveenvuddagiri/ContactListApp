@@ -46,7 +46,8 @@ function HomePage() {
                         email: con.email,
                         name: (con.name.first + " " + con.name.last),
                         city: con.location.city,
-                        image: con.picture.large
+                        image: con.picture.large,
+                        location: con.location.coordinates
                     }
                 })
                 setContact([...contact,...data]);
@@ -74,6 +75,11 @@ function HomePage() {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         Contacts List
                     </Typography>
+
+                    <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+                        Welcome {localStorage.getItem('userName')}
+                    </Typography>
+
                     <Button color="error" variant="contained" onClick={logout} >Logout</Button>
                 </Toolbar>
             </AppBar>
@@ -89,6 +95,7 @@ function HomePage() {
                             name={con.name}
                             city={con.city}
                             image={con.image}
+                            location={con.location}
                         />
                     ))}
                     {isLoading && <CardSkeleton cards={6} />}
